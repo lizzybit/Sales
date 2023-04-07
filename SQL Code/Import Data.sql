@@ -30,7 +30,7 @@ CREATE TABLE sales (
 	DEALSIZE varchar(255)
     );
     
-LOAD DATA LOCAL INFILE '/Users/elizabeth/Documents/GitHub/Sales/Sales Data.csv'
+LOAD DATA LOCAL INFILE '/Users/elizabeth/Documents/GitHub/Sales/Data/Raw/Sales Data.csv'
 INTO TABLE sales
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
