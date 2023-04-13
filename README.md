@@ -1,10 +1,46 @@
 # Exploring Sales Data in SQL and Tableau | RFM Analysis in SQL
+
+## Table of Contents
+- [1. Background and Motivation](#1-background-and-motivation)
+- [2. Data Retrieval](#2-data-retrieval)
+  * [2.1 Dataset Retrieval](#21-dataset-retrieval)
+  * [2.2 License](#22-license)
+- [4. Import Data](#4-import-data)
+  * [4.1 Create Table](#41-create-table)
+  * [4.2 Load Data](#42-load-data)
+- [5. Data Cleaning and Inpection](#5-data-cleaning-and-inpection)
+  * [5.1 Data Inspection](#51-data-inspection)
+  * [5.2 Initial Data Cleaning in Excel](#52-initial-data-cleaning-in-excel)
+  * [5.3 Data Cleaning in SQL](#53-data-cleaning-in-sql)
+- [6. Exploratory Data Analysis](#6-exploratory-data-analysis)
+  * [6.1 Grouping Sales by Product Line, Year and Dealsize](#61-grouping-sales-by-product-line-year-and-dealsize)
+  * [6.2 What is the Best Month for Sales in Each Year? How Much was Earned That Month?](#62-what-is-the-best-month-for-sales-in-each-year-how-much-was-earned-that-month)
+  * [6.3 What is the Best Selling Product in the Month With the Most Revenue?](#63-what-is-the-best-selling-product-in-the-month-with-the-most-revenue)
+  * [6.4 What City Has the Highest Number of Sales in a Specific Country?](#64-what-city-has-the-highest-number-of-sales-in-a-specific-country)
+  * [6.5 Which is the Best Selling Product in a Specific Country?](#65-which-is-the-best-selling-product-in-a-specific-country)
+  * [6.6 Which Products are Most Often Sold Together?](#66-which-products-are-most-often-sold-together)
+- [7. Recency-Frequency-Monetary (RFM) Analysis](#7-recency-frequency-monetary-rfm-analysis)
+- [8. Tableau Dashboards](#8-tableau-dashboards)
+- [9. Summary/Conclusion](#9-summaryconclusion)
+
+## 1. Background and Motivation
+<p align = "justify">
+The importance of customer segmentation in improving marketing strategy and increasing revenue is emphasized by businesses. A popular technique for segmentation is Recency-Frequency-Monetary (RFM) analysis, which groups customers based on their past purchase behavior in terms of recency, frequency, and monetary value. RFM analysis is used to identify a company's most valuable customers and those who are at risk of churning.
+	</p>
+<p align = "justify">
+In the project, sales data is explored through SQL and Tableau to perform RFM analysis. The dataset used in the project contains information on 2,823 sales made by a company, including order date, product category, product name, sales quantity, sales price, and customer information. 
+	</p>
+<p align = "justify">
+Initial data inspection and cleaning are performed, including removing time from the ORDERDATE column using Excel. After cleaning the data, RFM analysis is performed using SQL to calculate the recency, frequency, and monetary value metrics. The results are visualized in Tableau to gain insights into customer behavior and identify the most valuable customers. The project aims to demonstrate how businesses can use RFM analysis to segment their customers and improve their marketing strategy.
+	</p>
  
- ## 2. Data Retrieval
+## 2. Data Retrieval
 
+### 2.1 Dataset Retrieval
 The dataset used in the project is available at: https://github.com/AllThingsDataWithAngelina/DataSource/blob/main/sales_data_sample.csv
-
+<p align = "justify">
 The dataset you provided is called "sales_data_sample.csv" and contains 2,823 rows and 25 columns, where each row represents a sale made by a company. The columns in the dataset provide information about each sale, such as the order date, ship date, product category, product name, sales quantity, sales price, and customer information.
+</p>
 
 The dataset includes:
 
@@ -34,6 +70,7 @@ The dataset includes:
 24. **CONTACTFIRSTNAME:** The first name of the person who made the sale.
 25. **DEALSIZE:** The size of the sale, either small, medium or large.
 
+### 2.2 License
 The data in this projects and the license CC0: Public Domain. This means that it is released to the public domain, and anyone can use, modify, or distribute it for any purpose, including commercial purposes, without any restrictions or limitations.
 
 ## 4. Import Data
@@ -240,7 +277,8 @@ WHERE s1.STATUS = 'Shipped' AND s2.ORDERNUMBER IN (
 GROUP BY s1.ORDERNUMBER
 ORDER BY ProductCodes DESC;
 ```
-## 7.
+## 7. Recency-Frequency-Monetary (RFM) Analysis
+Who is the company's best customer? This could be best answered with RFM.
 > Input:
 ``` sql
 SELECT
@@ -272,7 +310,6 @@ SELECT r.*,
 	NTILE(4) OVER (ORDER BY AVGMonetaryValue) AS rfm_monetary
 FROM RFM r;
 
-DROP TABLE rfm_temp;
 
 CREATE TEMPORARY TABLE rfm_temp (
     CUSTOMERNAME varchar(255),
@@ -333,3 +370,10 @@ SELECT CUSTOMERNAME, rfm_recency, rfm_frequency, rfm_monetary,
     END AS rfm_segment
 FROM rfm_temp;
 ```
+## 8. Tableau Dashboards
+The Tableau Dashboards for each of the above results can be found here: https://public.tableau.com/app/profile/liz.s
+
+## 9. Summary/Conclusion
+<p align = "justify">
+In conclusion, this project aimed to explore the Recency-Frequency-Monetary (RFM) analysis technique, which is a customer segmentation technique that groups customers based on their recency, frequency, and monetary value metrics. The project retrieved a dataset from a GitHub repository, cleaned the data, and imported it into a SQL database. Exploratory data analysis (EDA) was performed to understand the data better. Then RFM was carried out. Overall, this project provided a useful introduction to the RFM analysis technique and demonstrated its implementation in SQL and Tableau.
+	</p>
