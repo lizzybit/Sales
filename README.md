@@ -129,6 +129,25 @@ FROM sales;
   <img src="https://user-images.githubusercontent.com/128324837/231854678-d523d9f7-7b1a-4075-a27a-e593f48a89b9.png" width=20% height=20%>
 </p>
 
+### 5.3 Data Cleaning in SQL
+#### 5.3.1 Standardize Date Format
+> Input:
+``` sql
+SELECT ORDERDATE
+FROM sales
+LIMIT 10;
 
+-- Change format from dd/mm/yyyy to yyyy-mm-dd
+UPDATE sales
+SET ORDERDATE = STR_TO_DATE(ORDERDATE, '%m/%d/%Y');
+
+-- Change datatype from varchar to date
+ALTER TABLE sales
+MODIFY COLUMN ORDERDATE date;
+
+SELECT ORDERDATE
+FROM sales
+LIMIT 10;
+```
 
 
