@@ -4,7 +4,7 @@
 
 The dataset used in the project is available at: https://github.com/AllThingsDataWithAngelina/DataSource/blob/main/sales_data_sample.csv
 
-It contains race entries from 1950 to present. 
+The dataset you provided is called "sales_data_sample.csv" and contains 2,823 rows and 25 columns, where each row represents a sale made by a company. The columns in the dataset provide information about each sale, such as the order date, ship date, product category, product name, sales quantity, sales price, and customer information.
 
 The dataset includes:
 
@@ -33,4 +33,5 @@ The dataset includes:
 23. **CONTACTLASTNAME:** The last name of the person who made the sale.
 24. **CONTACTFIRSTNAME:** The first name of the person who made the sale.
 25. **DEALSIZE:** The size of the sale, either small, medium or large.
+
 The data in this projects and the license CC0: Public Domain. This means that it is released to the public domain, and anyone can use, modify, or distribute it for any purpose, including commercial purposes, without any restrictions or limitations.
