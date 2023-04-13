@@ -1,3 +1,8 @@
+<p align = "center">
+  <img src="https://user-images.githubusercontent.com/128324837/231863833-dd131b18-d608-4372-9598-d6c97b0595e1.jpeg" width=50% height=50%>
+</p>
+
+
 # Exploring Sales Data in SQL and Tableau | RFM Analysis in SQL
 
 ## Table of Contents
