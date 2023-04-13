@@ -1,6 +1,7 @@
 <p align = "center">
-  <img src="https://user-images.githubusercontent.com/128324837/231863833-dd131b18-d608-4372-9598-d6c97b0595e1.jpeg" width=50% height=50%>
+  <img src="https://user-images.githubusercontent.com/128324837/231864249-4402bfa6-f073-4c80-9b93-f35287c12b8d.jpg" width=60% height=60%>
 </p>
+
 
 
 # Exploring Sales Data in SQL and Tableau | RFM Analysis in SQL
