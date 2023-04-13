@@ -2,8 +2,6 @@
   <img src="https://user-images.githubusercontent.com/128324837/231864249-4402bfa6-f073-4c80-9b93-f35287c12b8d.jpg" width=60% height=60%>
 </p>
 
-
-
 # Exploring Sales Data in SQL and Tableau | RFM Analysis in SQL
 
 ## Table of Contents
