@@ -39,3 +39,5 @@ IGNORE 1 ROWS;
 
 SELECT *
 FROM sales;
+
+

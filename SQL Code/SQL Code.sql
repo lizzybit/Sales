@@ -97,6 +97,7 @@ WHERE COUNTRY = 'USA'
 GROUP BY 1,2
 ORDER BY 3 DESC;
 
+--- Which products are most often sold together? 
 SELECT DISTINCT s1.ORDERNUMBER, GROUP_CONCAT(s2.PRODUCTCODE SEPARATOR ',') AS ProductCodes
 FROM sales s1
 JOIN sales s2 ON s1.ORDERNUMBER = s2.ORDERNUMBER
